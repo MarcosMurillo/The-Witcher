@@ -2,7 +2,7 @@ import React from 'react';
 import { Container, Content } from './styles';
 import Logo from '../../assets/logo_dark.png';
 
-function Login() {
+function Main() {
   return (
     <Container>
       <Content>
@@ -15,4 +15,4 @@ function Login() {
   );
 }
 
-export default Login;
+export default Main;
