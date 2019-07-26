@@ -9,6 +9,7 @@ function Login() {
         <img src={Logo} alt="logo" />
         <input type="text" placeholder="E-mail" />
         <input type="password" placeholder="Senha" />
+        <button type="button">LOGIN</button>
       </Content>
     </Container>
   );
