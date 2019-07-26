@@ -14,9 +14,11 @@ html,body, #root {
 }
 
 body {
+  background: #181818;
+  background-image:("../assets/background.png");
+  background-repeat:no-repeat;
   text-rendering:optimizeLegibility !important;
   -webkit-font-smoothing:antialised !important;
-  background: #181818;
   font-family: 'Montserrat',sans-serif;
   color:#fafafa
 }

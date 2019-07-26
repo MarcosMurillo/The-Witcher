@@ -1,4 +1,5 @@
 import React from 'react';
+import Login from './pages/login';
 
 import GlobalStyle from './styles/global';
 
@@ -6,7 +7,7 @@ function App() {
   return (
     <>
       <GlobalStyle />
-      <h1>The Witcher</h1>
+      <Login />
     </>
   );
 }
