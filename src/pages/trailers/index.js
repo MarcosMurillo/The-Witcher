@@ -1,5 +1,5 @@
 import React from 'react';
-import { Container, Sidebar } from './styles';
+import { Container, Sidebar, Logout } from './styles';
 import Logo from '../../assets/logo_dark.png';
 
 function Trailers() {
@@ -7,8 +7,9 @@ function Trailers() {
     <Container>
       <Sidebar>
         <img src={Logo} alt="logo" />
-        <button type="button">TRAILERS</button>
-        <button type="button">LOGOUT</button>
+        <Logout to="/">
+          <strong>LOGOUT</strong>
+        </Logout>
       </Sidebar>
     </Container>
   );

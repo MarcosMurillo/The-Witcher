@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import { Link } from 'react-router-dom';
 import backgroundImage from '../../assets/background.png';
 
 export const Container = styled.div`
@@ -34,32 +35,32 @@ export const Sidebar = styled.aside`
     height: 137px;
     display: block;
   }
+`;
 
-  button {
-    width: 254px;
-    height: 39px;
-    align-self: center;
+export const Logout = styled(Link)`
+  width: 254px;
+  height: 39px;
+  text-align: center;
 
-    font-family: Roboto Condensed;
-    font-style: normal;
-    font-weight: normal;
-    font-size: 14px;
-    line-height: 16px;
-    text-align: center;
+  padding-top: 10px;
 
-    margin-top: 50px;
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: 300;
+  font-size: 14px;
+  line-height: 16px;
+  text-decoration: none;
 
-    border: 1px solid #a99e7e;
-    background-color: transparent;
-    color: #a99e7e;
+  margin-top: 50px;
 
-    outline: 0;
+  border: 1px solid #a99e7e;
+  background-color: transparent;
+  color: #a99e7e;
 
-    cursor: pointer;
-    &:hover {
-      opacity: 0.5;
-      background: #a99e7e;
-      color: #fafafa;
-    }
+  cursor: pointer;
+  &:hover {
+    opacity: 0.5;
+    background: #a99e7e;
+    color: #fafafa;
   }
 `;

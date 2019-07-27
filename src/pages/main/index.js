@@ -1,5 +1,5 @@
 import React from 'react';
-import { Container, Content } from './styles';
+import { Container, Content, Login } from './styles';
 import Logo from '../../assets/logo_dark.png';
 
 function Main() {
@@ -9,7 +9,9 @@ function Main() {
         <img src={Logo} alt="logo" />
         <input type="text" placeholder="E-mail" />
         <input type="password" placeholder="Senha" />
-        <button type="button">LOGIN</button>
+        <Login to="/trailers">
+          <span>LOGIN</span>
+        </Login>
       </Content>
     </Container>
   );

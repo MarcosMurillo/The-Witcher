@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import { Link } from 'react-router-dom';
 import backgroundImage from '../../assets/background.png';
 
 export const Container = styled.div`
@@ -45,31 +46,38 @@ export const Content = styled.div`
     line-height: 16px;
   }
 
-  button {
-    width: 106px;
-    height: 39px;
-    align-self: center;
+  }
+`;
+export const Login = styled(Link)`
+  width: 106px;
+  height: 39px;
+  text-align: center;
+  align-self: center;
+  text-decoration: none;
 
-    font-family: Roboto Condensed;
+  margin-top: 50px;
+
+  border: 1px solid #a99e7e;
+  background-color: transparent;
+  color: #a99e7e;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  cursor: pointer;
+  &:hover {
+    opacity: 0.5;
+    background: #a99e7e;
+    color: #fafafa;
+  }
+
+  span {
+    font-family: Roboto;
     font-style: normal;
-    font-weight: normal;
+    font-weight: 300;
     font-size: 14px;
     line-height: 16px;
-    text-align: center;
-
-    margin-top: 50px;
-
-    border: 1px solid #a99e7e;
-    background-color: transparent;
-    color: #a99e7e;
-
-    outline: 0;
-
-    cursor: pointer;
-    &:hover {
-      opacity: 0.5;
-      background: #a99e7e;
-      color: #fafafa;
-    }
+    margin: auto;
   }
 `;
