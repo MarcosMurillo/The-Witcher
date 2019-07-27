@@ -1,83 +1,66 @@
 import styled from 'styled-components';
-import { Link } from 'react-router-dom';
-import backgroundImage from '../../assets/background.png';
 
-export const Container = styled.div`
-  height: 100vh;
-  width: 100vw;
-  background-image: linear-gradient(rgba(13, 13, 13, 0.6), rgba(13, 13, 13, 0.7)),
-    url(${backgroundImage});
-  background-size: cover;
-  overflow: hidden;
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-position: top;
-  position: relative;
+export const Content = styled.div`
+  background-color: rgb(0, 0, 0);
+  background-color: rgba(0, 0, 0, 0.65);
+
   display: flex;
+  flex: 1;
+
+  justify-content: center;
   align-items: center;
 
-  @media (max-width: 768px) {
-    background-position-x: -64rem;
+  height: 100%;
+
+  .login-logomarca {
+    height: 200px;
+    width: auto;
   }
 `;
 
-export const Content = styled.div`
-  margin: 30vh auto auto auto;
+export const Form = styled.form`
   display: flex;
   flex-direction: column;
 
-  img {
-    width: 274px;
-    height: 137px;
-  }
-
-  input {
-    width: 285px;
-    height: 17px;
-    color: #fff;
-    margin-top: 40px;
+  .login-input {
     background: transparent;
+    margin-top: 35px;
+
+    padding: 2px;
+
     border: 0;
     border-bottom: 1px solid #a99e7e;
+    color: #babaca;
     font-family: Roboto;
-    font-style: normal;
-    font-weight: 300;
-    font-size: 14px;
-    line-height: 16px;
+    font-size: 22px;
   }
 
+  .login-input + .login-input {
+    margin-top: 20px;
   }
 `;
-export const Login = styled(Link)`
-  width: 106px;
-  height: 39px;
-  text-align: center;
-  align-self: center;
-  text-decoration: none;
 
-  margin-top: 50px;
+export const Button = styled.button`
+  width: 150px;
+  height: 40px;
+  align-self: center;
+
+  text-align: center;
+  vertical-align: baseline;
+
+  font-family: Roboto Condensed;
+  font-size: 14px;
+
+  margin-top: 30px;
 
   border: 1px solid #a99e7e;
   background-color: transparent;
   color: #a99e7e;
-
-  display: flex;
-  align-items: center;
-  justify-content: center;
 
   cursor: pointer;
   &:hover {
     opacity: 0.5;
     background: #a99e7e;
     color: #fafafa;
-  }
-
-  span {
-    font-family: Roboto;
-    font-style: normal;
-    font-weight: 300;
-    font-size: 14px;
-    line-height: 16px;
-    margin: auto;
   }
 `;

@@ -1,17 +1,19 @@
 import React from 'react';
-import { Container, Sidebar, Logout } from './styles';
+import { Sidebar, Logout, Content } from './styles';
+import { Background } from '../../styles/components';
 import Logo from '../../assets/logo_dark.png';
 
 function Trailers() {
   return (
-    <Container>
+    <Background>
       <Sidebar>
         <img src={Logo} alt="logo" />
-        <Logout to="/">
-          <strong>LOGOUT</strong>
-        </Logout>
+        <Logout to="/">LOGOUT</Logout>
       </Sidebar>
-    </Container>
+      <Content>
+        <div />
+      </Content>
+    </Background>
   );
 }
 
