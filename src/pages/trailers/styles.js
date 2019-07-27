@@ -4,7 +4,7 @@ import backgroundImage from '../../assets/background.png';
 export const Container = styled.div`
   height: 100vh;
   width: 100vw;
-  background-image: linear-gradient(rgba(13, 13, 13, 0.6), rgba(13, 13, 13, 0.7)),
+  background-image: linear-gradient(to right, rgba(0, 0, 0, 1), rgba(0, 0, 0, 0.8)),
     url(${backgroundImage});
   background-size: cover;
   overflow: hidden;
@@ -23,10 +23,11 @@ export const Sidebar = styled.aside`
   padding-top: 150px;
 
   height: 100%;
-  width: 500px;
-  background-image: linear-gradient(rgba(13, 13, 13, 0.6), rgba(13, 13, 13, 0.7)),
-    url(${backgroundImage});
+  width: 400px;
+  background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url(${backgroundImage});
   color: #b3b3b3;
+
+  border-right: 1px solid #4c4c4c;
 
   img {
     width: 274px;
@@ -61,14 +62,4 @@ export const Sidebar = styled.aside`
       color: #fafafa;
     }
   }
-`;
-export const Content = styled.div`
-  flex: 1;
-  display: flex;
-  flex-direction: column;
-  background: linear-gradient(to bottom, #414141 0%, #181818 20%), transparent;
-  background-size: 100% 250%, 100%;
-  background-repeat: no-repeat;
-  background-position: top;
-  padding: 0 20px;
 `;
