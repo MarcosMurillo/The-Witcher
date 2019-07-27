@@ -28,6 +28,10 @@ export const Logout = styled(Link)`
   margin-top: 50px;
   color: #babaca;
   cursor: pointer;
+
+  &:hover {
+    color: #a99e7e;
+  }
 `;
 
 export const Content = styled.div`
@@ -36,4 +40,50 @@ export const Content = styled.div`
 
   height: 100%;
   width: 100%;
+  display: flex;
+
+  padding: 0px 40px;
+`;
+
+export const MovieList = styled.div`
+  height: 100%;
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+
+  align-content: flex-start;
+  justify-content: space-evenly;
+
+  padding: 0px 40px;
+
+  overflow-y: scroll;
+
+  .trailer-card {
+    height: 300px;
+    width: auto;
+
+    border: 1px solid #a99e7e;
+    margin: 40px 20px 0px 0px;
+    padding: 0px;
+  }
+
+  ::-webkit-scrollbar {
+    width: 15px;
+  }
+
+  ::-webkit-scrollbar-track {
+    background: #8e825e;
+    border: 5px solid transparent;
+    background-clip: content-box;
+    margin: 45px 25px;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background: #a99e7e;
+    border-radius: 10px;
+  }
+
+  ::-webkit-scrollbar-thumb:hover {
+    background: #72684b;
+  }
 `;
