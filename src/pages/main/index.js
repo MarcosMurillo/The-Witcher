@@ -5,6 +5,11 @@ import { Background } from '../../styles/components';
 import Logo from '../../assets/logo_dark.png';
 
 class Main extends PureComponent {
+  state = {
+    valueEmailInput: '',
+    valuePasswordInput: '',
+  };
+
   static propTypes = {
     history: PropTypes.shape({
       push: PropTypes.func,
@@ -12,11 +17,15 @@ class Main extends PureComponent {
   };
 
   handleSubmit = (e) => {
-    const { history } = this.props;
-
     e.preventDefault();
 
-    history.push('/trailers');
+    const { valueEmailInput, valuePasswordInput } = this.state;
+    if (valueEmailInput === '' || valuePasswordInput === '') {
+      return alert('Email ou senha invalidos');
+    }
+
+    const { history } = this.props;
+    history.push('/protected/trailers');
   };
 
   render() {
@@ -26,8 +35,20 @@ class Main extends PureComponent {
           <Content>
             <Form onSubmit={this.handleSubmit}>
               <img className="login-logomarca" src={Logo} alt="Logomarca The Witcher" />
-              <input className="login-input" type="text" placeholder="E-mail" />
-              <input className="login-input" type="password" placeholder="Senha" />
+              <input
+                className="login-input"
+                type="text"
+                placeholder="E-mail"
+                value={this.state.valueEmailInput}
+                onChange={e => this.setState({ valueEmailInput: e.target.value })}
+              />
+              <input
+                className="login-input"
+                type="password"
+                placeholder="Senha"
+                value={this.state.valuePasswordInput}
+                onChange={e => this.setState({ valuePasswordInput: e.target.value })}
+              />
               <Button className="login-button" type="submit">
                 LOGIN
               </Button>

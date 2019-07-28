@@ -42,15 +42,15 @@ export const Content = styled.div`
   width: 100%;
   display: flex;
 
-  padding: 0px 40px;
+  padding: 0px 40px 40px 40px;
 `;
 
 export const MovieList = styled.div`
   height: 100%;
   width: 100%;
+
   display: flex;
   flex-wrap: wrap;
-
   align-content: flex-start;
   justify-content: space-evenly;
 
@@ -65,6 +65,8 @@ export const MovieList = styled.div`
     border: 1px solid #a99e7e;
     margin: 40px 20px 0px 0px;
     padding: 0px;
+
+    cursor: pointer;
   }
 
   ::-webkit-scrollbar {
@@ -85,5 +87,29 @@ export const MovieList = styled.div`
 
   ::-webkit-scrollbar-thumb:hover {
     background: #72684b;
+  }
+`;
+
+export const LoadMore = styled.button`
+  width: 150px;
+  height: 40px;
+  align-self: center;
+
+  text-align: center;
+  vertical-align: baseline;
+
+  font-family: Roboto;
+  font-size: 14px;
+
+  margin-top: 30px;
+
+  border: 1px solid #a99e7e;
+  background-color: transparent;
+  color: #a99e7e;
+  cursor: pointer;
+
+  &:hover {
+    background-color: #a99e7e;
+    color: #babaca;
   }
 `;

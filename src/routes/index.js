@@ -7,7 +7,7 @@ import Trailers from '../pages/trailers';
 const Routes = () => (
   <Switch>
     <Route exact path="/" component={Login} />
-    <Route path="/trailers" component={Trailers} />
+    <Route path="/protected/trailers" component={Trailers} />
   </Switch>
 );
 
