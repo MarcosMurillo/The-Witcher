@@ -35,13 +35,13 @@ export default function Trailers() {
       <Content>
         <MovieList>
           {movies
-            .map((movie, index) => (
+            .map(movie => (
               <img
-                key={Math.random()}
+                key={movie}
                 className="trailer-card"
                 onClick={() => HandleClickImage(movie)}
                 src={`https://i.ytimg.com/vi/${movie}/sddefault.jpg`}
-                alt={`Thumbnail do ${index + 1}º trailer`}
+                alt="Thumnails"
               />
             ))
             .slice(0, count)}
@@ -50,7 +50,7 @@ export default function Trailers() {
           )}
         </MovieList>
       </Content>
-      <Player id={id} />
+      <Player id={id} visible={visible} />
     </Background>
   );
 }

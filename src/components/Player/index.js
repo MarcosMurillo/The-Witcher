@@ -1,7 +1,7 @@
 import React from 'react';
 import Modal from 'react-modal';
 import Youtube from 'react-youtube';
-import { useSelector, useDispatch } from 'react-redux';
+import { useDispatch } from 'react-redux';
 
 const customStyles = {
   content: {
@@ -13,8 +13,15 @@ const customStyles = {
     transform: 'translate(-50%, -50%)',
   },
 };
-export default function Player(id) {
-  const visible = useSelector(state => state.isVisible);
+
+const opts = {
+  height: '390',
+  width: '640',
+  playerVars: {
+    autoplay: 1,
+  },
+};
+export default function Player(id, visible) {
   const dispatch = useDispatch();
 
   function HandleButtonClick() {
@@ -23,7 +30,7 @@ export default function Player(id) {
   return (
     <>
       <Modal isOpen={visible} style={customStyles}>
-        <Youtube videoId={id} />
+        <Youtube videoId={id} opts={opts} />
       </Modal>
       <button onClick={() => HandleButtonClick()} style={{ zIndex: 5 }}>
         Close
