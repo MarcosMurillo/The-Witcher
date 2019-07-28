@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { useSelector, useDispatch } from 'react-redux';
 import {
   Sidebar, Logout, Content, MovieList, LoadMore,
 } from './styles';
@@ -7,14 +8,16 @@ import Logo from '../../assets/logo_dark.png';
 import Player from '../../components/Player';
 import movies from '../../mocks/movies';
 
-function Trailers() {
+export default function Trailers() {
   const [id, setId] = useState('');
-  const [visible, setVisible] = useState(false);
   const [count, setcount] = useState(5);
+
+  const visible = useSelector(state => state.isVisible);
+  const dispatch = useDispatch();
 
   async function HandleClickImage(movie) {
     setId(movie);
-    setVisible(true);
+    dispatch({ type: 'TOGGLE_MODAL', isVisible: true });
   }
 
   function HandleClickButton(valueCountState) {
@@ -22,6 +25,7 @@ function Trailers() {
       setcount(valueCountState + 5);
     }
   }
+
   return (
     <Background>
       <Sidebar>
@@ -46,9 +50,7 @@ function Trailers() {
           )}
         </MovieList>
       </Content>
-      <Player id={id} isVisible={visible} />
+      <Player id={id} />
     </Background>
   );
 }
-
-export default Trailers;

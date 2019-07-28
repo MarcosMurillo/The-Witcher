@@ -1,6 +1,7 @@
 import React from 'react';
 import Modal from 'react-modal';
 import Youtube from 'react-youtube';
+import { useSelector, useDispatch } from 'react-redux';
 
 const customStyles = {
   content: {
@@ -12,14 +13,21 @@ const customStyles = {
     transform: 'translate(-50%, -50%)',
   },
 };
-function Player(id, isVisible) {
+export default function Player(id) {
+  const visible = useSelector(state => state.isVisible);
+  const dispatch = useDispatch();
+
+  function HandleButtonClick() {
+    dispatch({ type: 'TOGGLE_MODAL', isVisible: false });
+  }
   return (
     <>
-      <Modal isOpen={false} style={customStyles}>
+      <Modal isOpen={visible} style={customStyles}>
         <Youtube videoId={id} />
       </Modal>
+      <button onClick={() => HandleButtonClick()} style={{ zIndex: 5 }}>
+        Close
+      </button>
     </>
   );
 }
-
-export default Player;

@@ -1,9 +1,18 @@
 import { createStore } from 'redux';
 
-function updateVisibleApp() {
-  return [];
+const INITIAL_STATE = {
+  isVisible: false
+};
+
+function modal(state = INITIAL_STATE, action) {
+  switch (action.type) {
+    case 'TOGGLE_MODAL':
+      return { ...state, isVisible: !state.isVisble };
+    default:
+      return state;
+  }
 }
 
-const store = createStore(updateVisibleApp);
+const store = createStore(modal);
 
 export default store;
