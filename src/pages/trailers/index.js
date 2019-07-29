@@ -1,12 +1,16 @@
 import React, { useState } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import {
-  Sidebar, Logout, Content, MovieList, LoadMore,
+  Sidebar, Logout, Content, MovieList, LoadMore, CloseModal,
 } from './styles';
 import { Background } from '../../styles/components';
 import Logo from '../../assets/logo_dark.png';
 import Player from '../../components/Player';
 import movies from '../../mocks/movies';
+
+function toggleModal() {
+  return { type: 'TOGGLE_MODAL' };
+}
 
 export default function Trailers() {
   const [id, setId] = useState('');
@@ -15,15 +19,20 @@ export default function Trailers() {
   const visible = useSelector(state => state.isVisible);
   const dispatch = useDispatch();
 
-  async function HandleClickImage(movie) {
-    setId(movie);
-    dispatch({ type: 'TOGGLE_MODAL', isVisible: true });
+  async function handleClickImage(movie) {
+    await setId(movie);
+
+    dispatch(toggleModal());
   }
 
-  function HandleClickButton(valueCountState) {
+  function handleLoadMore(valueCountState) {
     if (valueCountState <= movies.length) {
       setcount(valueCountState + 5);
     }
+  }
+
+  function handleCloseModal() {
+    dispatch(toggleModal());
   }
 
   return (
@@ -35,22 +44,29 @@ export default function Trailers() {
       <Content>
         <MovieList>
           {movies
-            .map(movie => (
+            .map((movie, index) => (
               <img
-                key={movie}
+                key={Math.random()}
                 className="trailer-card"
-                onClick={() => HandleClickImage(movie)}
+                onClick={() => handleClickImage(movie)}
                 src={`https://i.ytimg.com/vi/${movie}/sddefault.jpg`}
-                alt="Thumnails"
+                alt={`Thumbnail do ${index + 1}º trailer`}
               />
             ))
             .slice(0, count)}
           {count < movies.length && (
-            <LoadMore onClick={() => HandleClickButton(count)}>LOAD MORE</LoadMore>
+            <LoadMore onClick={() => handleLoadMore(count)}>LOAD MORE</LoadMore>
           )}
         </MovieList>
       </Content>
-      <Player id={id} visible={visible} />
+
+      {visible && (
+        <CloseModal type="button" onClick={() => handleCloseModal()}>
+          CLOSE
+        </CloseModal>
+      )}
+
+      <Player id={id} />
     </Background>
   );
 }

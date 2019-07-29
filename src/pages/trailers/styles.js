@@ -26,6 +26,9 @@ export const Sidebar = styled.aside`
 export const Logout = styled(Link)`
   font-family: Roboto;
   margin-top: 50px;
+
+  text-decoration: none;
+
   color: #babaca;
   cursor: pointer;
 
@@ -112,4 +115,23 @@ export const LoadMore = styled.button`
     background-color: #a99e7e;
     color: #babaca;
   }
+`;
+
+export const CloseModal = styled.button`
+  position: absolute;
+  top: 30px;
+  right: 30px;
+  z-index: 5;
+
+  font-family: Roboto;
+  font-size: 18px;
+  color: #babaca;
+  cursor: pointer;
+
+  &:hover {
+    color: #a99e7e;
+  }
+
+  border: none;
+  background-color: transparent;
 `;
