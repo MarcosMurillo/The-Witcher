@@ -25,10 +25,11 @@ class Main extends PureComponent {
     }
 
     const { history } = this.props;
-    history.push('/protected/trailers');
+    return history.push('/protected/trailers');
   };
 
   render() {
+    const { valueEmailInput, valuePasswordInput } = this.state;
     return (
       <>
         <Background>
@@ -39,14 +40,14 @@ class Main extends PureComponent {
                 className="login-input"
                 type="text"
                 placeholder="E-mail"
-                value={this.state.valueEmailInput}
+                value={valueEmailInput}
                 onChange={e => this.setState({ valueEmailInput: e.target.value })}
               />
               <input
                 className="login-input"
                 type="password"
                 placeholder="Senha"
-                value={this.state.valuePasswordInput}
+                value={valuePasswordInput}
                 onChange={e => this.setState({ valuePasswordInput: e.target.value })}
               />
               <Button className="login-button" type="submit">
