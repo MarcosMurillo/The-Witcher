@@ -33,8 +33,8 @@ export default function Player({ id }) {
   const visible = useSelector(state => state.isVisible);
 
   const opts = {
-    height: '390',
-    width: '640',
+    width: '800',
+    height: '500',
     playerVars: {
       autoplay: 1,
     },

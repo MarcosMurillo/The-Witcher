@@ -23,12 +23,51 @@ export const Sidebar = styled.aside`
   }
 `;
 
-export const Logout = styled(Link)`
+export const TrailersButton = styled.button`
+  width: 150px;
+  height: 40px;
+  align-self: center;
+
+  text-align: center;
+  vertical-align: baseline;
+
   font-family: Roboto;
-  margin-top: 50px;
+  font-size: 14px;
 
-  text-decoration: none;
+  margin-top: 30px;
 
+  border: 1px solid #a99e7e;
+  background-color: transparent;
+  color: #a99e7e;
+  cursor: pointer;
+
+  &:hover {
+    background-color: #a99e7e;
+    color: #babaca;
+  }
+`;
+export const Message = styled.p`
+  font-family: Roboto;
+  font-size: 14px;
+  color: #a99e7e;
+  margin-top: 10px;
+`;
+
+export const Logout = styled.button`
+  width: 150px;
+  height: 40px;
+  align-self: center;
+
+  text-align: center;
+  vertical-align: baseline;
+
+  font-family: Roboto;
+  font-size: 14px;
+
+  margin-top: 30px;
+  border: 0;
+
+  background-color: transparent;
   color: #babaca;
   cursor: pointer;
 

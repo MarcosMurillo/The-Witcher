@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 import { Content, Form, Button } from './styles';
 import { Background } from '../../styles/components';
 import Logo from '../../assets/logo_dark.png';
+import { login } from '../../auth';
 
 class Main extends PureComponent {
   state = {
@@ -18,14 +19,13 @@ class Main extends PureComponent {
 
   handleSubmit = (e) => {
     e.preventDefault();
-
     const { valueEmailInput, valuePasswordInput } = this.state;
-    if (valueEmailInput === '' || valuePasswordInput === '') {
-      return alert('Email ou senha invalidos');
-    }
 
+    if (!login(valueEmailInput, valuePasswordInput)) {
+      return alert('E-mail ou senha invalidos');
+    }
     const { history } = this.props;
-    return history.push('/protected/trailers');
+    return history.push('/trailers');
   };
 
   render() {

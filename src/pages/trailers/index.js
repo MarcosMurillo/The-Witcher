@@ -1,20 +1,29 @@
 import React, { useState } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import {
-  Sidebar, Logout, Content, MovieList, LoadMore, CloseModal,
+  Sidebar,
+  Logout,
+  Content,
+  MovieList,
+  LoadMore,
+  CloseModal,
+  TrailersButton,
+  Message,
 } from './styles';
 import { Background } from '../../styles/components';
 import Logo from '../../assets/logo_dark.png';
 import Player from '../../components/Player';
 import movies from '../../mocks/movies';
+import { logout } from '../../auth';
 
 function toggleModal() {
   return { type: 'TOGGLE_MODAL' };
 }
 
-export default function Trailers() {
+export default function Trailers({ history }) {
   const [id, setId] = useState('');
   const [count, setcount] = useState(5);
+  const [msg, setMsg] = useState(false);
 
   const visible = useSelector(state => state.isVisible);
   const dispatch = useDispatch();
@@ -35,11 +44,25 @@ export default function Trailers() {
     dispatch(toggleModal());
   }
 
+  function handleClickTrailers() {
+    setMsg(true);
+    setTimeout(() => {
+      setMsg(false);
+    }, 2000);
+  }
+
+  function handleClickLogout() {
+    logout();
+    return history.push('/');
+  }
+
   return (
     <Background>
       <Sidebar>
         <img src={Logo} alt="logo" />
-        <Logout to="/">LOGOUT</Logout>
+        <TrailersButton onClick={() => handleClickTrailers()}>TRAILERS</TrailersButton>
+        <Message hidden={!msg}>Esta é a página de trailers clique em um para assistir.</Message>
+        <Logout onClick={() => handleClickLogout()}>LOGOUT</Logout>
       </Sidebar>
       <Content>
         <MovieList>
