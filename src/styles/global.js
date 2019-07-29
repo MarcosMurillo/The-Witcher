@@ -18,6 +18,19 @@ body {
   -webkit-font-smoothing: antialised !important;
   font-family: 'Montserrat',sans-serif;
   color: #fafafa;
+
+  .fade-out {
+    opacity: 0;
+    width: 0;
+    height: 0;
+    transition: width 0.5s 0.5s, height 0.5s 0.5s, opacity 0.5s;
+  }
+  .fade-in{
+    opacity:1;
+    width:100px;
+    height:100px;
+    transition: width 0.5s, height 0.5s, opacity 0.5s 0.5s;
+}
 }
 `;
 
