@@ -88,7 +88,7 @@ export const YouLink = styled.a`
   font-family: Roboto;
   font-size: 14px;
 
-  margin-top: 450px;
+  margin-top: 350px;
   border: 0;
 
   background-color: transparent;
