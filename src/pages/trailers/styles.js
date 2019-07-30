@@ -1,5 +1,4 @@
 import styled from 'styled-components';
-import { Link } from 'react-router-dom';
 
 export const Sidebar = styled.aside`
   background-color: rgb(0, 0, 0);
@@ -46,11 +45,12 @@ export const TrailersButton = styled.button`
     color: #babaca;
   }
 `;
+
 export const Message = styled.p`
+  margin-top: 10px;
   font-family: Roboto;
   font-size: 14px;
   color: #a99e7e;
-  margin-top: 10px;
 `;
 
 export const Logout = styled.button`
@@ -65,6 +65,30 @@ export const Logout = styled.button`
   font-size: 14px;
 
   margin-top: 30px;
+  border: 0;
+
+  background-color: transparent;
+  color: #babaca;
+  cursor: pointer;
+
+  &:hover {
+    color: #a99e7e;
+  }
+`;
+
+export const YouLink = styled.a`
+  width: 150px;
+  height: 40px;
+  align-self: center;
+
+  text-align: center;
+  text-decoration: none;
+  vertical-align: baseline;
+
+  font-family: Roboto;
+  font-size: 14px;
+
+  margin-top: 450px;
   border: 0;
 
   background-color: transparent;

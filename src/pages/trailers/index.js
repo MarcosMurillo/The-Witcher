@@ -9,6 +9,7 @@ import {
   CloseModal,
   TrailersButton,
   Message,
+  YouLink,
 } from './styles';
 import { Background } from '../../styles/components';
 import Logo from '../../assets/logo_dark.png';
@@ -63,6 +64,12 @@ export default function Trailers({ history }) {
         <TrailersButton onClick={() => handleClickTrailers()}>TRAILERS</TrailersButton>
         <Message hidden={!msg}>Esta é a página de trailers clique em um para assistir.</Message>
         <Logout onClick={() => handleClickLogout()}>LOGOUT</Logout>
+        <YouLink
+          href="https://www.youtube.com/playlist?list=PL6t93nUFQQ1ZiXMfhPyhjb0PX3LgEVMcF"
+          target="_blank"
+        >
+          Acessar Playlist no Youtube
+        </YouLink>
       </Sidebar>
       <Content>
         <MovieList>
