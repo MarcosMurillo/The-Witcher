@@ -23,7 +23,7 @@ function toggleModal() {
 
 export default function Trailers({ history }) {
   const [id, setId] = useState('');
-  const [count, setcount] = useState(5);
+  const [count, setcount] = useState(6);
   const [msg, setMsg] = useState(false);
 
   const visible = useSelector(state => state.isVisible);
@@ -37,7 +37,7 @@ export default function Trailers({ history }) {
 
   function handleLoadMore(valueCountState) {
     if (valueCountState <= movies.length) {
-      setcount(valueCountState + 5);
+      setcount(valueCountState + 6);
     }
   }
 
