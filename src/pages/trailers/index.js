@@ -37,7 +37,7 @@ export default function Trailers({ history }) {
 
   function handleLoadMore(valueCountState) {
     if (valueCountState <= movies.length) {
-      setcount(valueCountState + 6);
+      setcount(valueCountState + );
     }
   }
 
